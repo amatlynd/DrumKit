@@ -9,14 +9,17 @@ function handleClick() {
 
   var buttonHTML = this.innerHTML;
   makeSound(buttonHTML);
-
+  buttonAnimation(buttonHTML);
 
 }
 
 document.addEventListener("keydown", event => {
   console.log(event.key);
   makeSound(event.key);
+  buttonAnimation(event.key);
 })
+
+
 
 function makeSound(key) {
 
@@ -52,4 +55,14 @@ function makeSound(key) {
     default: console.log(buttonHTML);
 
   }
+}
+
+function buttonAnimation(key) {
+  var activeButton = document.querySelector("." + key);
+  console.log(activeButton.className);
+  activeButton.classList.add("pressed");
+
+  setTimeout(() => {
+    activeButton.classList.remove("pressed");
+  },150)
 }
