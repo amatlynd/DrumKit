@@ -14,7 +14,6 @@ function handleClick() {
 }
 
 document.addEventListener("keydown", event => {
-  console.log(event.key);
   makeSound(event.key);
   buttonAnimation(event.key);
 })
@@ -64,5 +63,5 @@ function buttonAnimation(key) {
 
   setTimeout(() => {
     activeButton.classList.remove("pressed");
-  },120)
+  },120);
 }
